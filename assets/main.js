@@ -73,27 +73,40 @@ function checkData(){
     if(password.value == ""){
         password.classList.add("redBorder");
         ready = false;
-    } else password.classList.remove("redBorder");
+    }
     if(toCypher.value == ""){
         toCypher.classList.add("redBorder");
         ready = false;
-    } else toCypher.classList.remove("redBorder");
+    }
     return ready;
 }
 
 function checkSeed(){
     if(seed.value == ""){
         seed.classList.add("orangeBorder");
-    } else seed.classList.remove("orangeBorder");
+        alert("No has introducido semilla, se establece la semilla por defecto a 0, es menos seguro.");
+        seed.value = 0;
+        return 0;
+    }
+    if(seed.value == "0"){
+        seed.classList.add("orangeBorder");
+        alert("No has introducido semilla, se establece la semilla por defecto a 0, es menos seguro.");
+        return 0;
+    }
     const regex = /^\d+$/;
     if (regex.test(seed.value)) {
         return parseInt(seed.value);
     }
-    alert("La semilla ha de ser un número entero, no se va a emplear la semilla para el cifrado, es algo menos seguro.");
-    return 0;
+    seed.classList.add("redBorder");
+    alert("La semilla ha de ser un número entero positivo.");
+    return -1;
 }
 
 function reset(){
+    password.classList.remove("redBorder");
+    toCypher.classList.remove("redBorder");
+    seed.classList.remove("orangeBorder");
+    seed.classList.remove("redBorder");
     cyphered.innerHTML = "";
     output.innerHTML = "";
     secure = Secure.newSecureUTF8(password.value);
@@ -103,7 +116,8 @@ function cypher() {
     reset();
     if(checkData()){
         var seedValue = checkSeed();
-        if (seedValue == 0){
+        if(seedValue < 0);
+        else if (seedValue == 0){
             cyphered.innerHTML = secure.cypherString(document.getElementById("text").value);
         } else {
             cyphered.innerHTML = secure.cypherString(document.getElementById("text").value, seedValue);
@@ -114,7 +128,8 @@ function cypher() {
 function decypher() {
     reset();
     var seedValue = checkSeed();
-    if (seedValue == 0){
+    if(seedValue < 0);
+    else if (seedValue == 0){
         cyphered.innerHTML = secure.decypherString(document.getElementById("text").value);
     } else {
         cyphered.innerHTML = secure.decypherString(document.getElementById("text").value, seedValue);
