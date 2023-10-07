@@ -55,6 +55,7 @@ input, textarea, #cyphered{
     min-height: 3rem;
     text-align: start;
     padding: 1rem;
+    resize: none;
 }
 #cyphered{
     border: 1px solid black;
