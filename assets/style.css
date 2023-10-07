@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    background-color: #282828;
+    color: wheat;
+}
+h1{
+    margin-top: 3rem;
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+a{
+    color: rgb(195 159 51);
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    padding:0.5rem;
+    cursor: pointer;
+}
+button:hover{
+    filter:invert();
+}
+input, textarea, #cyphered{
+    background-color: #696969;
+    color:white;
+    padding: 0.5rem;
+}
+::placeholder {
+    color: rgb(173, 173, 173);
+    opacity: 1; /* Firefox */
+  }
+#container{
+    width: 100%;
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: auto;
+    margin-top: 3rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: #424242;
+    border: 2px solid #161410;
+}
+#container > * {
+    width: -webkit-fill-available;
+    display: flex;
+    flex-wrap: wrap;
+}
+#text{
+    min-height: 3rem;
+    text-align: start;
+    padding: 1rem;
+}
+#cyphered{
+    border: 1px solid black;
+    border-radius: 3px;
+    min-height: 3rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+#cyphered:hover{
+    filter:invert();
+}
+.redBorder{
+    border: 1.5px solid red;
+}
+.orangeBorder{
+    border: 1.5px solid orange;
+}
+.gap{
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+#cypher{
+    background-color: #95b5a0;
+}
+#decypher{
+    background-color: #b59595;
+}
+#output{
+    color: #7d7d81;
+}
+.gray{
+    color: #7d7d81;
+}
+.w500{
+    max-width: 500px;
+    margin: auto;
+}
