@@ -20,12 +20,14 @@
         <p class="gray w500">Este programa cifra textos en función de una contraseña (obligatoria) y una semilla (opcional), no podrás descifrar el texto resultante si no tienes la contraseña y la semilla con las cuales fueron originados.</p>
         <div id="container">
             <div class="gap">
-                <label class="column gap">Contraseña: *<input type="text" id="password" name="password" placeholder="Contraseña..."></label>
-                <label class="column gap">Semilla:<input type="text" id="seed" name="seed" placeholder="Semilla... (Número)"></label>
+                <label class="column gap fill">Contraseña: *<input type="text" id="password" class="fill" name="password" placeholder="Contraseña..."></label>
+                <label class="column gap fill">Semilla:<input type="text" id="seed" class="fill" name="seed" placeholder="Semilla... (Número)"></label>
             </div>
-            <label class="column gap">Texto a cifrar / descifrar: *<textarea id="text" placeholder="Escribe el texto a cifrar / descifrar..."></textarea></label>
-            <label>Salida del programa:<span id="output"></span></label>
-            <div id="cyphered" onclick="copy(this)" title="[Click] Copiar al portapapeles"></div>
+            <label class="column gap fill">Texto a cifrar / descifrar: *<textarea id="text" class="fill" placeholder="Escribe el texto a cifrar / descifrar..."></textarea></label>
+            <div class="column gap">
+                <label>Salida del programa:<span id="output"></span></label>
+                <div id="cyphered" onclick="copy(this)" title="[Click] Copiar al portapapeles"></div>
+            </div>
             <div class="gap">
                 <button id="cypher" onclick="cypher()">Cifrar</button>
                 <button id="decypher" onclick="decypher()">Descifrar</button>

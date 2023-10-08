@@ -20,14 +20,17 @@ a{
 button{
     padding:0.5rem;
     cursor: pointer;
+    border-radius: 5px;
 }
 button:hover{
     filter:invert();
 }
 input, textarea, #cyphered{
+    border: 2px solid #a39986;
     background-color: #696969;
     color:white;
     padding: 0.5rem;
+    border-radius: 5px;
 }
 ::placeholder {
     color: rgb(173, 173, 173);
@@ -38,7 +41,7 @@ input, textarea, #cyphered{
     max-width: 950px;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     margin: auto;
     margin-top: 3rem;
     padding: 1rem;
@@ -58,8 +61,6 @@ input, textarea, #cyphered{
     resize: none;
 }
 #cyphered{
-    border: 1px solid black;
-    border-radius: 3px;
     min-height: 3rem;
     padding: 1rem;
     cursor: pointer;
@@ -69,12 +70,13 @@ input, textarea, #cyphered{
     filter:invert();
 }
 .redBorder{
-    border: 1.5px solid red;
+    border-color: red !important;
 }
 .orangeBorder{
-    border: 1.5px solid orange;
+    border-color: orange !important;
 }
 .gap{
+    display: flex;
     gap: 0.5rem;
     justify-content: space-between;
 }
@@ -93,6 +95,12 @@ input, textarea, #cyphered{
 .w500{
     max-width: 500px;
     margin: auto;
+}
+.fill{
+    max-width: -webkit-fill-available;
+}
+.round{
+    border-radius: 6px;
 }
 #icon{
     text-align: center;
