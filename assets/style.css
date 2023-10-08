@@ -13,24 +13,24 @@ p {
 a{
     color: rgb(195 159 51);
 }
-.column{
-    display: flex;
-    flex-direction: column;
+span{
+    color: #7d7d81;
+}
+input, textarea, #cyphered, button{
+    border: 2px solid #a39986;
+    background-color: #696969;
+    color:#d9d6d0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    resize: none;
 }
 button{
-    padding:0.5rem;
     cursor: pointer;
-    border-radius: 5px;
+    border-color: #2b2822;
+    color: #d9d6d0;
 }
 button:hover{
     filter:invert();
-}
-input, textarea, #cyphered{
-    border: 2px solid #a39986;
-    background-color: #696969;
-    color:white;
-    padding: 0.5rem;
-    border-radius: 5px;
 }
 ::placeholder {
     color: rgb(173, 173, 173);
@@ -58,16 +58,15 @@ input, textarea, #cyphered{
     min-height: 3rem;
     text-align: start;
     padding: 1rem;
-    resize: none;
 }
 #cyphered{
     min-height: 3rem;
     padding: 1rem;
-    cursor: pointer;
     word-break: break-all;
 }
-#cyphered:hover{
+.invert:hover{
     filter:invert();
+    cursor: pointer;
 }
 .redBorder{
     border-color: red !important;
@@ -78,13 +77,9 @@ input, textarea, #cyphered{
 .gap{
     display: flex;
     gap: 0.5rem;
+}
+.between{
     justify-content: space-between;
-}
-#cypher{
-    background-color: #95b5a0;
-}
-#decypher{
-    background-color: #b59595;
 }
 #output{
     color: #7d7d81;
@@ -105,4 +100,18 @@ input, textarea, #cyphered{
 #icon{
     text-align: center;
     margin-top: 2rem;
+}
+.mt{
+    margin-top: 2rem;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+#menu{
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #2d2c2a;
+}
+.hidden{
+    display: none !important;
 }

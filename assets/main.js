@@ -65,7 +65,9 @@ const password = document.getElementById("password");
 const toCypher = document.getElementById("text");
 const seed = document.getElementById("seed");
 const cyphered = document.getElementById("cyphered");
-const output = document.getElementById("output");
+const outputCypher = document.getElementById("outputCypher");
+const toHash = document.getElementById("toHash");
+const hashed = document.getElementById("hashed");
 var secure;
 
 function checkData(){
@@ -108,7 +110,7 @@ function reset(){
     seed.classList.remove("orangeBorder");
     seed.classList.remove("redBorder");
     cyphered.innerHTML = "";
-    output.innerHTML = "";
+    outputCypher.innerHTML = "";
     secure = Secure.newSecureUTF8(password.value);
 }
 
@@ -137,16 +139,33 @@ function decypher() {
     
 }
 
-function copy(element) {
-    var content = element.innerText;
+function copy(element, idOutput) {
+    var content = element.value;
     if(content != ""){
         var temp = document.createElement("textarea");
         temp.value = content;
         document.body.appendChild(temp);
         temp.select();
         document.execCommand("copy");
-        output.innerHTML = "- [ Texto copiado al portapapeles ] ";
+        document.getElementById(idOutput).innerHTML = "ㅤ[ Texto copiado al portapapeles ] ";
         document.body.removeChild(temp);
     }
     
+}
+
+function showHide(showClass, hideClass) {
+    const elementsToShow = document.querySelectorAll(`.${showClass}`);
+    const elementsToHide = document.querySelectorAll(`.${hideClass}`);
+  
+    elementsToShow.forEach(element => {
+      element.classList.remove('hidden'); // Para mostrar los elementos
+    });
+  
+    elementsToHide.forEach(element => {
+      element.classList.add('hidden'); // Para ocultar los elementos
+    });
+}
+
+function hash(fun){
+    hashed.value = fun(toHash.value);
 }
