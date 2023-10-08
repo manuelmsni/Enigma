@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icon.png">
     <title>Cypher machine</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -10,15 +11,19 @@
     <!--
         <input type="file" id="file-selector" multiple>
     -->
+        <div id="icon">
+            <img src="icon.png" width="64px" height="64px">
+        </div>
+        
         <h1>- Enigma 2.0 -</h1>
-        <p>Developed by <a href="https://github.com/manuelmsni">@manuelmsni</a></p>
+        <p>Desarrollado por <a href="https://github.com/manuelmsni">@manuelmsni</a></p>
         <p class="gray w500">Este programa cifra textos en función de una contraseña (obligatoria) y una semilla (opcional), no podrás descifrar el texto resultante si no tienes la contraseña y la semilla con las cuales fueron originados.</p>
         <div id="container">
             <div class="gap">
                 <label class="column gap">Contraseña: *<input type="text" id="password" name="password" placeholder="Contraseña..."></label>
                 <label class="column gap">Semilla:<input type="text" id="seed" name="seed" placeholder="Semilla... (Número)"></label>
             </div>
-            <label class="column gap">Texto a cifrar: *<textarea id="text" placeholder="Escribe el texto a cifrar / descifrar..."></textarea></label>
+            <label class="column gap">Texto a cifrar / descifrar: *<textarea id="text" placeholder="Escribe el texto a cifrar / descifrar..."></textarea></label>
             <label>Salida del programa:<span id="output"></span></label>
             <div id="cyphered" onclick="copy(this)" title="[Click] Copiar al portapapeles"></div>
             <div class="gap">
